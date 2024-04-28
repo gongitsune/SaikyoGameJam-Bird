@@ -626,7 +626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
-  rotatePower: 50
+  rotatePower: 70
   verticalPower: 50
   rotationThreshold: 50
 --- !u!4 &1038548465 stripped
@@ -831,7 +831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelPrefab:
-  - {fileID: 4120342506659411397, guid: 7c052144587c71248bdaa13e5e799ba7, type: 3}
+  - {fileID: 3328703751725994849, guid: 7c052144587c71248bdaa13e5e799ba7, type: 3}
   player: {fileID: 1038548464}
   scanInterval: 0.5
   maxRadius: 300
