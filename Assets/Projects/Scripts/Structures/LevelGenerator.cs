@@ -81,10 +81,20 @@ namespace Projects.Scripts.Structures
             {
                 var structureDis = (structure.transform.position - playerPos).sqrMagnitude;
                 if (structureDis > maxRadius * maxRadius)
+                {
                     _pool.Release(structure);
+                    structure.OnRelease();
+                }
                 else if (structureDis < levelSize * levelSize)
+                {
                     structure.SetColliderActive(true);
-                else structure.SetColliderActive(false);
+                    structure.SetScoreWheelActive(true);
+                }
+                else
+                {
+                    structure.SetColliderActive(false);
+                    structure.SetScoreWheelActive(false);
+                }
             });
             _generated.RemoveAll(structure =>
                 (structure.transform.position - playerPos).sqrMagnitude > maxRadius * maxRadius);

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Projects.Scripts.Game;
+using UnityEngine;
 
 namespace Projects.Scripts.Player
 {
@@ -6,6 +7,8 @@ namespace Projects.Scripts.Player
     {
         [SerializeField] private float speed, rotatePower, verticalPower;
         [SerializeField] private float rotationThreshold = 0.1f;
+        [SerializeField] private string scoreWheelTag = "ScoreWheel";
+        private GameManager _gameManager;
 
         private PlayerInput _input;
         private Rigidbody _rigid;
@@ -15,6 +18,7 @@ namespace Projects.Scripts.Player
         private void Start()
         {
             _input = new PlayerInput();
+            _gameManager = GameManager.Instance;
             TryGetComponent(out _rigid);
         }
 
@@ -26,7 +30,9 @@ namespace Projects.Scripts.Player
         private void FixedUpdate()
         {
             if (_input.LeftWing && _input.RightWing)
+            {
                 _rotation.x -= verticalPower * Time.fixedDeltaTime;
+            }
             else if (!_input.LeftWing && !_input.RightWing)
             {
                 _rotation.x += verticalPower * Time.fixedDeltaTime;
@@ -46,9 +52,19 @@ namespace Projects.Scripts.Player
                 if (_speedMultiplier > 2f)
                     _speedMultiplier = 2f;
             }
-            else _speedMultiplier = 1;
+            else
+            {
+                _speedMultiplier = 1;
+            }
+
             _rigid.velocity = transform.forward * (speed * _speedMultiplier * Time.fixedDeltaTime);
-            // _rigid.MovePosition(_rigid.position + transform.forward * (speed * _speedMultiplier * Time.fixedDeltaTime));
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!other.gameObject.CompareTag(scoreWheelTag)) return;
+
+            _gameManager.AddScore();
         }
     }
 }
