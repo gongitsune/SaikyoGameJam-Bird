@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Wing
-  m_Speed: 2
+  m_Speed: 10
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -85,7 +85,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 9113457624738298362, guid: 40e68aeaeadadd147bcfa055d7d9fdca,
+    m_Motion: {fileID: 9113457624738298362, guid: 0a79087e3b52fa94794826f90ea694e6,
       type: 3}
     m_Threshold: -1
     m_Position: {x: 0, y: 0}
@@ -94,7 +94,7 @@ BlendTree:
     m_DirectBlendParameter: DirBlend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 8935702716812921447, guid: 40e68aeaeadadd147bcfa055d7d9fdca,
+    m_Motion: {fileID: 8935702716812921447, guid: 0a79087e3b52fa94794826f90ea694e6,
       type: 3}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
