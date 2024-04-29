@@ -4,11 +4,11 @@ namespace Projects.Scripts.Game
 {
     public class GameManager : SingletonMonoBehaviour<GameManager>
     {
-        private int _numOfCollectedWheel;
+        public int NumOfCollectedWheel { get; private set; }
 
         public void AddScore()
         {
-            _numOfCollectedWheel++;
+            NumOfCollectedWheel++;
         }
     }
 }
