@@ -9,8 +9,8 @@ namespace Projects.Scripts.Player
         
         public void CheckInput()
         {
-            LeftWing = Input.GetKey(KeyCode.Z);
-            RightWing = Input.GetKey(KeyCode.M);
+            LeftWing = Input.GetKey(KeyCode.M);
+            RightWing = Input.GetKey(KeyCode.Z);
         }
     }
 }
